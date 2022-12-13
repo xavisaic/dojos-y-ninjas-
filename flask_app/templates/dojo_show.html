@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<table class="table p-3 col-4 mx-auto my-5 bg-dark text-light">
+    <thead>
+      <tr>
+        <th scope="col">#id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for n in ninjas_from %}
+
+      <tr>
+        <th scope="row">{{n.dojo_id}}</th>
+        <td>{{n.first_name}}</td>
+        <td>{{n.last_name}}</td>
+        <td>{{n.age}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Nuevo Dojo</h1>
+
+<form action="/createdojo" method="post" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
+    <label for="name">Nombre del Dojo</label>
+    <input type="text" name="name" id="">
+    <input type="submit" value="Create Dojo" class="btn btn-primary btn-outline-dark">
+</form>
+
+
+
+
+<h1>Todos Los Dojos</h1>
+
+
+<table class="table">
+    <thead>
+        
+        <tr>
+            <th scope="col">Todos los Dojos</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        {% for d in all_dojos %}
+        <tr>
+            
+            <td><a href="/dojo_show/{{d.id}}">{{d.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="/new_user">Agregar Ninjas</a>
+
+
+
+{% endblock content %}
+
+
